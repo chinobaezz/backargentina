@@ -1,43 +1,91 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.portfolio.mgb.Dto;
 
-import javax.validation.constraints.NotBlank;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+
+@Entity
 public class dtoExperiencia {
-    @NotBlank
-    private String nombreE;
-    @NotBlank
-    private String descripcionE;
+   @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     
-    //Constructores
+    private String nombreEmpresa;
+    
+    private String puesto;
+    
+    @Temporal(TemporalType.DATE)
+   private Date inicio;
+    @Temporal(TemporalType.DATE)
+   private Date fin;
+  
+    @Lob
+   private String imagen;
 
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
-    }
-    //Getters & Setters
-
-    public String getNombreE() {
-        return nombreE;
+    public dtoExperiencia(String nombreEmpresa, String puesto, Date inicio, Date fin, String imagen) {
+        this.nombreEmpresa = nombreEmpresa;
+        this.puesto = puesto;
+        this.inicio = inicio;
+        this.fin = fin;
+        this.imagen = imagen;
     }
 
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
+    public int getId() {
+        return id;
     }
 
-    public String getDescripcionE() {
-        return descripcionE;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
+    public String getNombreEmpresa() {
+        return nombreEmpresa;
     }
-    
+
+    public void setNombreEmpresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
+    }
+
+    public String getPuesto() {
+        return puesto;
+    }
+
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
+    }
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Date inicio) {
+        this.inicio = inicio;
+    }
+
+    public Date getFin() {
+        return fin;
+    }
+
+    public void setFin(Date fin) {
+        this.fin = fin;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
 }
