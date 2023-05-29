@@ -1,5 +1,6 @@
 package com.portfolio.mgb.Service;
 
+import com.portfolio.mgb.Controller.PersonaController;
 import com.portfolio.mgb.Entity.Persona;
 import com.portfolio.mgb.Repository.IPersonaRepository;
 import java.util.List;
@@ -42,4 +43,8 @@ public class ImpPersonaService {
      public boolean existsByNombre(String nombre){
          return ipersonaRepository.existsByNombre(nombre);
      }
+
+    public void crearPersonaController(PersonaController pers) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
